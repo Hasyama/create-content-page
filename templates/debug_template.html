@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+{{ all_textbooks }}
+
+<ul class="books">
+
+    <!-- all_books is books_DB.objects.all() -->
+    {% for x in all_books %}
+    <li class="book">
+    <p>{{ x.book_name }}</p>
+    <ol class="chapters">
+        {% for y in x.chapters_db_set.all  %}
+            <li class="chapter">{{ y.chapter_name }}</li>
+        {% endfor %}
+    </ol>
+    {% endfor %}
+    </li>
+</ul>
+
+<p>Debug template</p>
+
+</body>
+</html>

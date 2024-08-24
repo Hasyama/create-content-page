@@ -1,0 +1,6 @@
+::open cmd/terminal here
+:: or navigate here with :: cd /d "path\to\this\folder"
+
+ python -m venv .venv
+.venv\Scripts\activate.bat
+ python -m pip install django~=5.0

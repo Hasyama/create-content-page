@@ -1,0 +1,52 @@
+#in virtual environment .venv in /testbookschapters/
+python manage.py shell
+
+from booksChaptersApp.models import *
+#----------------------#
+books_DB.objects.all()
+
+book_1 = books_DB()
+book_2 = books_DB()
+book_1.book_name = 'To Kill a Mockingbird'
+book_2.book_name = 'The Sweet Hereafter'
+
+book_1.book_id
+#1
+book_2.book_id
+#2
+
+book_1.save()
+book_2.save()
+
+books_DB.objects.all()
+#----------------------#
+chapters_DB.objects.all()
+
+# chapters for book_1 'To Kill a Mockingbird'
+chapter_1_1 = chapters_DB()
+chapter_1_2 = chapters_DB()
+
+chapter_1_1.book_id_id = 1
+chapter_1_2.book_id_id = 1
+
+chapter_1_1.chapter_name = "The Beginning of the Finch's"
+chapter_1_2.chapter_name = 'The Adventures of Education'
+
+chapter_1_1.save()
+chapter_1_2.save()
+
+# chapters for book_2 'The Sweet Hereafter'
+chapter_2_1 = chapters_DB()
+chapter_2_2 = chapters_DB()
+
+chapter_2_1.book_id_id = 2
+chapter_2_2.book_id_id = 2
+
+chapter_2_1.chapter_name = 'Dolores Driscoll'
+chapter_2_2.chapter_name = 'Billy Ansel'
+
+chapter_2_1.save()
+chapter_2_2.save()
+
+chapters_DB.objects.all()
+#----------------------#
